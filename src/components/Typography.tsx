@@ -90,7 +90,7 @@ const Typography: React.FC<TypographyProps> = ({
       case "body1":
         return "p";
       case "body2":
-        return "p";
+        return "span";
       default:
         return "p";
     }

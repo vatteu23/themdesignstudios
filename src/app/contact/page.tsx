@@ -190,7 +190,7 @@ export default function Contact() {
           variants={fadeIn}
           initial="hidden"
           animate="visible"
-          className="mb-12 flex flex-col md:flex-row md:justify-between items-center gap-4"
+          className="mb-12"
         >
           <Typography
             variant="pageTitle"
@@ -201,7 +201,7 @@ export default function Contact() {
           >
             Contact
           </Typography>
-          <Typography variant="body1" fontFamily="sans" className="max-w-xl">
+          <Typography variant="body1" fontFamily="sans" className="max-w-2xl">
             We would love to hear from you! Whether your project is big or
             small, professional design advice will ensure you'll love your space
             for years to come.
@@ -216,22 +216,13 @@ export default function Contact() {
             className="space-y-6"
           >
             <div className="border-t border-gray-200 pt-8">
-              <Typography
-                variant="h3"
-                fontFamily="sans"
-                fontWeight="medium"
-                className="mb-6"
-              >
-                Them design studios
-              </Typography>
-
-              <motion.div variants={inputVariants} className="mb-6">
+              <motion.div variants={inputVariants} className="mb-3">
                 <Typography variant="body1" fontFamily="sans" gutterBottom>
                   <strong>Tel:</strong> +917702277247
                 </Typography>
               </motion.div>
 
-              <motion.div variants={inputVariants} className="mb-6">
+              <motion.div variants={inputVariants} className="mb-3">
                 <Typography variant="body1" fontFamily="sans" gutterBottom>
                   <strong>Email:</strong> maneesh@themdesignstudios.com
                 </Typography>

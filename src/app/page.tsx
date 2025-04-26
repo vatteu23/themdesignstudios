@@ -152,11 +152,11 @@ export default function Home() {
                   </Typography>
 
                   <Typography
-                    variant="body2"
+                    variant="small"
                     fontWeight="light"
                     align="center"
                     fontFamily="mono"
-                    className="text-neutral-500"
+                    className="text-neutral-500 block"
                   >
                     - Martin Charles Scorsese
                   </Typography>
@@ -269,12 +269,17 @@ export default function Home() {
                   </div>
                 </div>
               ) : pageContent ? (
-                <div
-                  className="prose max-w-none text-left md:w-3/5"
-                  dangerouslySetInnerHTML={{
-                    __html: pageContent.content_description,
-                  }}
-                />
+                <Typography
+                  variant="body2"
+                  className="block max-w-none md:w-3/5"
+                >
+                  <div
+                    className="prose  text-left  "
+                    dangerouslySetInnerHTML={{
+                      __html: pageContent.content_description,
+                    }}
+                  />
+                </Typography>
               ) : (
                 <div className="md:w-3/5">
                   <Typography
