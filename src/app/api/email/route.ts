@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
           from: `Them design studios <${VERIFIED_EMAIL}>`,
           to: "u1.bythem@gmail.com", // Admin email
           // Only include cc if email is provided and not the same as to address
-          cc: ["vuday23@gmail.com"], // Add vuday23@gmail.com as CC
+          cc: ["u1.bythem@gmail.com"], // Add vuday23@gmail.com as CC
           replyTo: email, // Make reply-to the customer's email
           subject: `New Contact Form Submission from ${name}`,
           html: `
@@ -125,7 +125,7 @@ Address: 11-13-981, Road No. 2, Green Hills Colony, L. B. Nagar, Hyderabad, Tela
         await resend.emails.send({
           from: `Them design studios <${VERIFIED_EMAIL}>`,
           to: email,
-          bcc: ["u1.bythem@gmail.com", "vuday23@gmail.com"], // BCC the admin as a backup
+          bcc: ["u1.bythem@gmail.com"], // BCC the admin as a backup
           subject: "Thank you for contacting Them design studios",
           html: `
           <html>

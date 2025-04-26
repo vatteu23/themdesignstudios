@@ -15,7 +15,6 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: `Them design studios <${VERIFIED_EMAIL}>`,
       to: "u1.bythem@gmail.com",
-      cc: ["vuday23@gmail.com"],
       subject: "Test Email from Contact Form",
       html: `
         <html>
