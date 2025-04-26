@@ -233,7 +233,7 @@ export default function Contact() {
 
               <motion.div variants={inputVariants} className="mb-6">
                 <Typography variant="body1" fontFamily="sans" gutterBottom>
-                  <strong>Email:</strong> maneesh@bythem.studio
+                  <strong>Email:</strong> maneesh@themdesignstudios.com
                 </Typography>
               </motion.div>
 
