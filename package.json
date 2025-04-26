@@ -1,0 +1,40 @@
+{
+  "name": "next-migration",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@popperjs/core": "^2.11.8",
+    "@react-email/components": "^0.0.36",
+    "@reduxjs/toolkit": "^2.7.0",
+    "bootstrap": "^5.3.5",
+    "firebase": "^11.6.0",
+    "framer-motion": "^12.9.2",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-select": "^5.10.1",
+    "react-toastify": "^11.0.5",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "resend": "^4.4.1",
+    "sass": "^1.87.0",
+    "styled-components": "^6.1.17"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^16.5.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

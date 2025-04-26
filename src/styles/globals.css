@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.react-toast-notifications__container {
+  z-index: 100000 !important;
+}
+
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+.logo-text {
+  margin-left: 15px;
+  position: relative;
+  font-size: 1.2rem;
+  color: #3f3f3f;
+  top: 4px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.theme {
+  background: linear-gradient(46.28deg, #69884d, #95ac81);
+  color: white !important;
+}
+
+.theme-hover {
+  color: #989b95;
+}
+
+.email-unread {
+  background: rgb(218, 218, 218);
+}
+
+.form-header {
+  font-weight: 400;
+}
+
+.no-text-decoration {
+  text-decoration: none !important;
+}
+
+.form-control:focus {
+  border-color: #989b95;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: linear-gradient(46.28deg, #95ac81, #69884d);
+  border: none !important;
+}
+
+a:focus,
+a:active,
+.btn-primary:focus,
+.btn-primary:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.navbar {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  background-color: white;
+}
+
+.navbar-toggler {
+  font-size: 12px;
+  border: none !important;
+}
+
+.nav-link {
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  color: #3f3f3f !important;
+}
+
+.nav-link-selected {
+  color: #69884d !important;
+}
+
+@media (min-width: 576px) {
+  .nav-link {
+    padding-left: 1rem !important;
+  }
+}
+
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+}
+
+.home-content {
+  padding: 0px 15px;
+}
+
+.footer {
+  background: #69884d;
+  background: linear-gradient(46.28deg, #69884d, #95ac81);
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  color: white;
+  opacity: 0.8;
+}
+
+.social-icon {
+  color: white;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+
+.social-icon:hover {
+  color: #f0f0f0;
+}
