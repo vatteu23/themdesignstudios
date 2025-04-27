@@ -73,3 +73,54 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## Color Management
+
+This project uses a centralized color management system. Colors are defined in the `tailwind.config.js` file and automatically synchronized with CSS variables.
+
+### Updating Colors
+
+To update colors throughout the site:
+
+1. Edit the colors in `tailwind.config.js`
+
+   ```js
+   // tailwind.config.js
+   module.exports = {
+     // ...
+     theme: {
+       extend: {
+         colors: {
+           primary: "#f2ece2", // Beige/cream background
+           secondary: "#9a8f80", // Muted gray-brown
+           "text-dark": "#432004", // Dark text color
+           "text-light": "#f5f5f5", // Light text color
+           "card-bg": "#d1cbc3", // Light gray card background
+         },
+         // ...
+       },
+     },
+     // ...
+   };
+   ```
+
+2. Run the color update script to sync colors with CSS variables
+
+   ```
+   node src/styles/updateColors.js
+   ```
+
+3. Start or restart the development server
+   ```
+   npm run dev
+   ```
+
+### How It Works
+
+- Colors are defined in `tailwind.config.js`
+- CSS variables are auto-generated in `globals.css`
+- Components use either:
+  - Tailwind classes like `text-text-dark` and `bg-primary`
+  - CSS variables like `var(--text-dark)` and `var(--primary)`
+
+This approach ensures consistency across the entire application while making it easy to update the color scheme by changing just the values in the tailwind config.

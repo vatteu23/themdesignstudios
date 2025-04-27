@@ -3,18 +3,18 @@ import Typography from "./Typography";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white py-12 mt-24">
+    <footer className="bg-secondary text-text-dark py-12 mt-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Typography
               variant="h1"
               fontWeight="normal"
-              className="text-neutral-50 mb-4 !leading-none"
+              className="text-text-dark mb-4 !leading-none"
             >
               Them design studios
             </Typography>
-            <Typography variant="body1" className="text-neutral-50 mb-4">
+            <Typography variant="body1" className="text-text-dark mb-4">
               Architecture &<br />
               Spatial Design Services
             </Typography>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-white hover:text-gray-300 text-lg font-medium"
+                  className="text-text-dark hover:text-primary text-lg font-medium"
                 >
                   Home
                 </Link>
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services"
-                  className="text-white hover:text-gray-300 text-lg font-medium"
+                  className="text-text-dark hover:text-primary text-lg font-medium"
                 >
                   Services
                 </Link>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/portfolio"
-                  className="text-white hover:text-gray-300 text-lg font-medium"
+                  className="text-text-dark hover:text-primary text-lg font-medium"
                 >
                   Portfolio
                 </Link>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-white hover:text-gray-300 text-lg font-medium"
+                  className="text-text-dark hover:text-primary text-lg font-medium"
                 >
                   About
                 </Link>
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="text-white hover:text-gray-300 text-lg font-medium"
+                  className="text-text-dark hover:text-primary text-lg font-medium"
                 >
                   Contact
                 </Link>
@@ -69,13 +69,13 @@ const Footer: React.FC = () => {
             <div className="mb-6">
               <a
                 href="mailto:maneesh@bythem.studio"
-                className="text-lg hover:text-gray-300 block"
+                className="text-lg hover:text-primary block"
               >
                 maneesh@bythem.studio
               </a>
               <a
                 href="tel:+917702277247"
-                className="text-lg hover:text-gray-300 block"
+                className="text-lg hover:text-primary block"
               >
                 +917702277247
               </a>
@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               <a
                 href="https://www.instagram.com/themhyd/"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-text-dark hover:text-primary"
               >
                 <span className="sr-only">Instagram</span>
                 <svg
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
               <a
                 href="https://www.linkedin.com/company/them-studios/"
                 target="_blank"
-                className="text-white hover:text-gray-300"
+                className="text-text-dark hover:text-primary"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg
@@ -119,8 +119,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-6">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-700 mt-12 pt-6">
+          <p className="text-text-dark text-sm">
             &copy; {new Date().getFullYear()} Them design studios. All rights
             reserved.
           </p>

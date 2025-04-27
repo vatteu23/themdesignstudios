@@ -236,7 +236,7 @@ export default function ServiceDetail() {
               <motion.div
                 key={project.id}
                 variants={fadeIn}
-                className="border-t border-gray-200 pt-10"
+                className="border-t border-stone-700/20 pt-10"
               >
                 <Link
                   href={`/project/${project.project_pagename || ""}`}

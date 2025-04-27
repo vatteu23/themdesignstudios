@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "../styles/App.css";
 import { Metadata } from "next";
 import { Providers } from "./providers";
 import ClientLayout from "@/components/ClientLayout";

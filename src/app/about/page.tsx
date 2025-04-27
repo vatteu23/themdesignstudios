@@ -120,7 +120,7 @@ export default function AboutUs() {
           animate="visible"
           className="flex flex-col md:flex-row justify-between mb-16
           gap-y-6 md:gap-12
-          bg-neutral-900 text-neutral-50 py-12 px-6 rounded-lg"
+          bg-stone-700 text-neutral-50 py-12 px-6 rounded-lg"
         >
           <Typography
             variant="h2"

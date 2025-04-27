@@ -140,32 +140,32 @@ export default function ProjectDetail() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="bg-white"
+      className=""
     >
       <div className="container mx-auto py-12">
         {/* Modern header section */}
         <Link
           href="/portfolio"
-          className="inline-flex items-center mb-8 text-gray-700 hover:text-gray-900 font-medium"
+          className="inline-flex items-center mb-8 text-stone-500 hover:text-stone-900 font-medium"
         >
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           Back to Portfolio
         </Link>
         <div className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-2">
             {projectDetails.project_name}
           </h1>
 
-          <div className="flex flex-wrap items-center text-gray-600 mb-6">
+          <div className="flex flex-wrap items-center text-stone-500 mb-6">
             <span className="mr-2 text-lg font-light">
               {projectDetails.project_type || "Planning & Interior Design"}
             </span>
 
             {projectDetails.project_location && (
               <>
-                <span className="mx-2 text-gray-400">•</span>
+                <span className="mx-2 text-stone-500">•</span>
                 <div className="flex items-center">
-                  <MapPinIcon className="h-5 w-5 mr-1 text-gray-500" />
+                  <MapPinIcon className="h-5 w-5 mr-1 text-stone-500" />
                   <span>{projectDetails.project_location}</span>
                 </div>
               </>
@@ -173,11 +173,11 @@ export default function ProjectDetail() {
 
             {projectDetails.project_date && (
               <>
-                <span className="mx-2 text-gray-400">•</span>
+                <span className="mx-2 text-stone-500">•</span>
                 <div className="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-1 text-gray-500"
+                    className="h-5 w-5 mr-1 text-stone-500"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -200,10 +200,10 @@ export default function ProjectDetail() {
           projectDetails.project_duration) && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             {projectDetails.project_client && (
-              <div className="bg-white shadow rounded-lg overflow-hidden border border-gray-100">
+              <div className=" shadow rounded-lg overflow-hidden border border-stone-700/20">
                 <div className="px-4 py-5">
-                  <h3 className="text-lg font-medium text-gray-900">Client</h3>
-                  <p className="mt-1 text-gray-600">
+                  <h3 className="text-lg font-medium text-stone-900">Client</h3>
+                  <p className="mt-1 text-stone-500">
                     {projectDetails.project_client}
                   </p>
                 </div>
@@ -211,10 +211,10 @@ export default function ProjectDetail() {
             )}
 
             {projectDetails.project_budget && (
-              <div className="bg-white shadow rounded-lg overflow-hidden border border-gray-100">
+              <div className=" shadow rounded-lg overflow-hidden border border-stone-700/20">
                 <div className="px-4 py-5">
-                  <h3 className="text-lg font-medium text-gray-900">Budget</h3>
-                  <p className="mt-1 text-gray-600">
+                  <h3 className="text-lg font-medium text-stone-900">Budget</h3>
+                  <p className="mt-1 text-stone-500">
                     {projectDetails.project_budget}
                   </p>
                 </div>
@@ -222,12 +222,12 @@ export default function ProjectDetail() {
             )}
 
             {projectDetails.project_duration && (
-              <div className="bg-white shadow rounded-lg overflow-hidden border border-gray-100">
+              <div className=" shadow rounded-lg overflow-hidden border border-stone-700/20">
                 <div className="px-4 py-5">
-                  <h3 className="text-lg font-medium text-gray-900">
+                  <h3 className="text-lg font-medium text-stone-900">
                     Duration
                   </h3>
-                  <p className="mt-1 text-gray-600">
+                  <p className="mt-1 text-stone-500">
                     {projectDetails.project_duration}
                   </p>
                 </div>
@@ -254,7 +254,7 @@ export default function ProjectDetail() {
         {/* Project details/content */}
         {projectDetails.project_content && (
           <div className="mb-12">
-            <div className="bg-white shadow rounded-lg overflow-hidden border border-gray-100">
+            <div className="shadow rounded-lg overflow-hidden border ">
               <div className="px-6 py-5">
                 <h2 className="text-xl font-semibold text-gray-900">
                   Project Details

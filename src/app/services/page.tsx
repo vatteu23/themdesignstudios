@@ -61,13 +61,14 @@ export default function ServicesIndex() {
 
   return (
     <div className="container mt-5 py-12 md:py-20">
-      <div className="mb-12 flex flex-col md:flex-row md:justify-between items-center gap-4">
+      <div className="mb-12 flex flex-col md:flex-row  md:justify-between text-left md:items-center gap-4">
         <Typography
           variant="pageTitle"
           component={"h1"}
           fontFamily="sans"
           gutterBottom
           fontWeight="semibold"
+          className="text-left"
         >
           Services
         </Typography>
@@ -96,7 +97,7 @@ export default function ServicesIndex() {
               <motion.div
                 key={service.id}
                 variants={itemVariants}
-                className="border-t border-gray-200 pt-10"
+                className="border-t border-stone-700/20 pt-10"
               >
                 <Link
                   href={`/services/${

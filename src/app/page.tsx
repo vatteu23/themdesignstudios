@@ -52,42 +52,42 @@ export default function Home() {
       title: "PLANNING",
       description:
         "Innovative architectural solutions that combine functionality with aesthetics, tailored to your specific needs and environment.",
-      icon: <HomeModernIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <HomeModernIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/planning",
     },
     {
       title: "INTERIOR DESIGN",
       description:
         "Transforming spaces with creative designs that reflect your style while maximizing comfort and functionality.",
-      icon: <CubeIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <CubeIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/interior-design",
     },
     {
       title: "FURNITURE & ACCESSORY DESIGN",
       description:
         "Custom furniture and accessory designs that complement your spaces with unique, functional and aesthetically pleasing elements.",
-      icon: <SwatchIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <SwatchIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/furniture-accessory-design",
     },
     {
       title: "LANDSCAPE DESIGN",
       description:
         "Creating outdoor environments that harmonize with architecture and enhance the natural beauty of your surroundings.",
-      icon: <GlobeAltIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <GlobeAltIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/landscape-design",
     },
     {
       title: "TURNKEY & PROJECT MANAGEMENT CONTRACT",
       description:
         "Complete end-to-end project handling from concept to completion, ensuring quality and timely delivery within budget.",
-      icon: <ClipboardDocumentListIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <ClipboardDocumentListIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/turnkey-project-management-contract",
     },
     {
       title: "GRAPHIC & BRANDING DESIGN",
       description:
         "Visual communication solutions that effectively convey your message with striking aesthetics and clarity for lasting brand impact.",
-      icon: <PaintBrushIcon className="w-8 h-8 text-neutral-800" />,
+      icon: <PaintBrushIcon className="w-8 h-8 text-text-dark" />,
       link: "/services/graphic-branding-design",
     },
   ];
@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Architectural Design */}
-      <section className="relative overflow-hidden bg-white pt-20 pb-12 md:pt-28 md:pb-16">
+      <section className="relative overflow-hidden bg-primary pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -132,7 +132,7 @@ export default function Home() {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="absolute top-0 left-0 h-px bg-neutral-300"
+                className="absolute top-0 left-0 h-px bg-stone-700"
               ></motion.div>
 
               <div className="py-12 px-8 md:px-16">
@@ -146,7 +146,7 @@ export default function Home() {
                     align="center"
                     fontFamily="sans"
                     fontWeight="light"
-                    className="tracking-wide text-neutral-800 mb-4"
+                    className="tracking-wide text-text-dark mb-4"
                   >
                     Simple is hard
                   </Typography>
@@ -156,7 +156,7 @@ export default function Home() {
                     fontWeight="light"
                     align="center"
                     fontFamily="mono"
-                    className="text-neutral-500 block"
+                    className="text-secondary block"
                   >
                     - Martin Charles Scorsese
                   </Typography>
@@ -168,7 +168,7 @@ export default function Home() {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="absolute bottom-0 right-0 h-px bg-neutral-300"
+                className="absolute bottom-0 right-0 h-px bg-stone-700"
               ></motion.div>
             </motion.div>
           </div>
@@ -176,12 +176,12 @@ export default function Home() {
       </section>
 
       {/* Image Gallery Section - Clean Frames */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-primary">
         <div className="container mx-auto px-4 relative">
           <div className="max-w-7xl mx-auto">
             {/* Top large image */}
             <div className="w-full mb-6">
-              <div className="border border-neutral-200 p-0">
+              <div className="border border-secondary p-0">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -202,7 +202,7 @@ export default function Home() {
             {/* Bottom two images side by side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Bottom left image */}
-              <div className="border border-neutral-200 p-0 bg-white">
+              <div className="border border-secondary p-0 bg-white">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -220,7 +220,7 @@ export default function Home() {
               </div>
 
               {/* Bottom right image */}
-              <div className="border border-neutral-200 p-0 bg-white">
+              <div className="border border-secondary p-0 bg-white">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -302,71 +302,58 @@ export default function Home() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 md:py-28 bg-neutral-50">
+      <section className="py-16 md:py-24 bg-primary">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
             <Typography
               variant="h2"
-              align="center"
-              gutterBottom
-              className="mb-16 tracking-tight"
+              className="mb-3 text-text-dark !text-center"
               fontWeight="light"
             >
               Our Services
             </Typography>
-
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            <Typography
+              variant="body1"
+              className="max-w-3xl mx-auto text-secondary !text-center"
             >
-              {services.map((service, index) => (
-                <motion.a
-                  key={index}
-                  variants={itemVariants}
-                  href={service.link}
-                  className="p-8 bg-white rounded-sm transition-all duration-300 group"
-                >
-                  <div className="flex items-start mb-5">
-                    <div className="p-2 rounded-sm bg-neutral-50 group-hover:bg-neutral-100 transition-colors">
-                      {service.icon}
-                    </div>
-                    <Typography
-                      variant="h5"
-                      fontWeight="medium"
-                      className="ml-4 group-hover:text-neutral-800 transition-colors"
-                      fontFamily="mono"
-                    >
-                      {service.title}
-                    </Typography>
-                  </div>
-                  <Typography
-                    variant="body1"
-                    className="text-neutral-600 leading-relaxed group-hover:text-neutral-800 transition-colors"
-                  >
-                    {service.description}
-                  </Typography>
-                </motion.a>
-              ))}
-            </motion.div>
-
-            <div className="text-center mt-16">
-              <Link
-                href="/services"
-                className="inline-block px-10 py-3.5 bg-black text-white rounded-sm hover:bg-neutral-800 transition-colors relative overflow-hidden group"
-              >
-                <span className="relative z-10">View all services</span>
-                <span className="absolute top-0 left-0 w-0 h-full bg-neutral-700 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
+              We provide comprehensive design solutions tailored to your unique
+              vision and requirements.
+            </Typography>
           </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {services.map((service, index) => (
+              <motion.a
+                key={index}
+                href={service.link}
+                variants={itemVariants}
+                className="bg-card-bg p-8 rounded-sm border border-secondary/30 hover:shadow-md transition-shadow"
+              >
+                <div className="mb-4">{service.icon}</div>
+                <Typography
+                  variant="h5"
+                  className="mb-3 text-text-dark"
+                  fontWeight="medium"
+                >
+                  {service.title}
+                </Typography>
+                <Typography variant="body2" className="mb-6 text-text-dark/80">
+                  {service.description}
+                </Typography>
+              </motion.a>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20 md:py-28 bg-neutral-900 text-white">
+      <section className="py-20 md:py-28 bg-stone-700 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center">
@@ -410,7 +397,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                  className="bg-neutral-800 p-10 rounded-sm"
+                  className="bg-stone-900 p-10 rounded-sm"
                 >
                   <Typography
                     variant="h3"

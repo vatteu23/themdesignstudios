@@ -198,10 +198,15 @@ export default function Contact() {
             fontFamily="sans"
             gutterBottom
             fontWeight="semibold"
+            className="text-text-dark"
           >
             Contact
           </Typography>
-          <Typography variant="body1" fontFamily="sans" className="max-w-2xl">
+          <Typography
+            variant="body1"
+            fontFamily="sans"
+            className="max-w-2xl text-secondary"
+          >
             We would love to hear from you! Whether your project is big or
             small, professional design advice will ensure you'll love your space
             for years to come.
@@ -215,21 +220,36 @@ export default function Contact() {
             variants={fadeIn}
             className="space-y-6"
           >
-            <div className="border-t border-gray-200 pt-8">
+            <div className="border-t border-secondary/30 pt-8">
               <motion.div variants={inputVariants} className="mb-3">
-                <Typography variant="body1" fontFamily="sans" gutterBottom>
+                <Typography
+                  variant="body1"
+                  fontFamily="sans"
+                  gutterBottom
+                  className="text-text-dark"
+                >
                   <strong>Tel:</strong> +917702277247
                 </Typography>
               </motion.div>
 
               <motion.div variants={inputVariants} className="mb-3">
-                <Typography variant="body1" fontFamily="sans" gutterBottom>
+                <Typography
+                  variant="body1"
+                  fontFamily="sans"
+                  gutterBottom
+                  className="text-text-dark"
+                >
                   <strong>Email:</strong> maneesh@themdesignstudios.com
                 </Typography>
               </motion.div>
 
               <motion.div variants={inputVariants} className="mb-6">
-                <Typography variant="body1" fontFamily="sans" gutterBottom>
+                <Typography
+                  variant="body1"
+                  fontFamily="sans"
+                  gutterBottom
+                  className="text-text-dark"
+                >
                   <strong>Address:</strong> 11-13-981, Road No. 2, Green Hills
                   Colony, Haripuri Colony, Vasavi Colony, L. B. Nagar,
                   Hyderabad, Telangana 500035, India
@@ -239,18 +259,18 @@ export default function Contact() {
 
             <motion.div
               variants={fadeIn}
-              className="border-t border-gray-200 pt-8"
+              className="border-t border-secondary/30 pt-8"
             >
               <Typography
                 variant="h3"
                 fontFamily="sans"
                 fontWeight="medium"
-                className="mb-6"
+                className="mb-6 text-text-dark"
               >
                 Location
               </Typography>
 
-              <div className="h-[400px] rounded-lg overflow-hidden">
+              <div className="h-[400px] rounded-lg overflow-hidden border border-secondary/30">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.0778366494734!2d78.54965387466983!3d17.356500583736324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb980e9d0325c1%3A0x9ffc55fb55db5ddc!2s11-13-981%2C%20Road%20No.%202%2C%20Green%20Hills%20Colony%2C%20Haripuri%20Colony%2C%20Vasavi%20Colony%2C%20L.%20B.%20Nagar%2C%20Hyderabad%2C%20Telangana%20500035%2C%20India!5e0!3m2!1sen!2sus!4v1718792351244!5m2!1sen!2sus"
                   width="100%"
@@ -268,14 +288,14 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="border-t border-gray-200 pt-8 md:pt-0 md:border-0"
+            className="border-t border-secondary/30 pt-8 md:pt-0 md:border-0"
           >
-            <div className="bg-white rounded-lg">
+            <div className=" rounded-lg px-8 pb-8">
               <Typography
                 variant="h3"
                 fontFamily="sans"
                 fontWeight="medium"
-                className="mb-8"
+                className="mb-8 text-text-dark"
               >
                 Send us a message
               </Typography>
@@ -284,7 +304,7 @@ export default function Contact() {
                 <motion.div variants={inputVariants}>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-text-dark mb-1"
                   >
                     Name*
                   </label>
@@ -294,9 +314,9 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-50 border ${
-                      errors.name ? "border-red-500" : "border-gray-200"
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition`}
+                    className={`w-full px-4 py-3 bg-primary border ${
+                      errors.name ? "border-red-500" : "border-secondary/30"
+                    } rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition`}
                     required
                   />
                   {errors.name && (
@@ -307,7 +327,7 @@ export default function Contact() {
                 <motion.div variants={inputVariants}>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-text-dark mb-1"
                   >
                     Email*
                   </label>
@@ -317,9 +337,9 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-50 border ${
-                      errors.email ? "border-red-500" : "border-gray-200"
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition`}
+                    className={`w-full px-4 py-3 bg-primary border ${
+                      errors.email ? "border-red-500" : "border-secondary/30"
+                    } rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition`}
                     required
                   />
                   {errors.email && (
@@ -330,7 +350,7 @@ export default function Contact() {
                 <motion.div variants={inputVariants}>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-text-dark mb-1"
                   >
                     Phone (optional)
                   </label>
@@ -340,14 +360,14 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition"
+                    className="w-full px-4 py-3 bg-primary border border-secondary/30 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition"
                   />
                 </motion.div>
 
                 <motion.div variants={inputVariants}>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-text-dark mb-1"
                   >
                     Message*
                   </label>
@@ -357,9 +377,9 @@ export default function Contact() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-50 border ${
-                      errors.message ? "border-red-500" : "border-gray-200"
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition`}
+                    className={`w-full px-4 py-3 bg-primary border ${
+                      errors.message ? "border-red-500" : "border-secondary/30"
+                    } rounded-md focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition`}
                     required
                   ></textarea>
                   {errors.message && (
@@ -377,7 +397,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-black text-white font-medium py-3 px-4 rounded-md hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-fit cursor-pointer bg-stone-900 text-stone-200 font-medium py-3 px-4 rounded-md hover:bg-secondary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">

@@ -82,17 +82,22 @@ export default function PortfolioPage() {
 
   return (
     <div className="container mt-5 py-12 md:py-20">
-      <div className="mb-12 flex flex-col md:flex-row md:justify-between items-center gap-4">
+      <div className="mb-12 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
         <Typography
           variant="pageTitle"
           component={"h1"}
           fontFamily="sans"
           gutterBottom
           fontWeight="semibold"
+          className="text-text-dark"
         >
-          Our Portfolio
+          Portfolio
         </Typography>
-        <Typography variant="body1" fontFamily="sans" className="max-w-xl">
+        <Typography
+          variant="body1"
+          fontFamily="sans"
+          className="max-w-xl text-secondary"
+        >
           Browse through our completed projects and see how we've helped clients
           bring their vision to life.
         </Typography>
@@ -108,12 +113,12 @@ export default function PortfolioPage() {
         <>
           {/* Project Filters */}
           {/* <div className="mb-8">
-            <div className="flex flex-wrap gap-2 bg-gray-50 p-4 rounded-lg">
+            <div className="flex flex-wrap gap-2 bg-primary p-4 rounded-lg">
               <button
                 className={`px-4 py-2 rounded-lg transition-colors ${
                   filter === "all"
-                    ? "bg-gray-900 text-white"
-                    : "bg-white hover:bg-gray-200 border border-gray-200"
+                    ? "bg-secondary text-primary"
+                    : "bg-white hover:bg-card-bg border border-secondary/20"
                 }`}
                 onClick={() => setFilter("all")}
               >
@@ -124,8 +129,8 @@ export default function PortfolioPage() {
                   key={category.id}
                   className={`px-4 py-2 rounded-lg transition-colors ${
                     filter === category.id
-                      ? "bg-gray-900 text-white"
-                      : "bg-white hover:bg-gray-200 border border-gray-200"
+                      ? "bg-secondary text-primary"
+                      : "bg-white hover:bg-card-bg border border-secondary/20"
                   }`}
                   onClick={() => setFilter(category.id)}
                 >
@@ -147,8 +152,8 @@ export default function PortfolioPage() {
             {filteredProjects.length > 0 ? (
               filteredProjects.map((id) => {
                 const project = projects[id];
-                // Generate a random pastel background color
-                const bgColor = `hsl(${parseInt(id, 16) % 360}, 70%, 97%)`;
+                // Generate a background color based on our theme
+                const bgColor = `hsl(${(parseInt(id, 16) % 20) + 35}, 35%, 92%)`;
 
                 return (
                   <motion.div
@@ -163,15 +168,14 @@ export default function PortfolioPage() {
                           .toLowerCase()
                           .replace(/\s+/g, "-")
                       }`}
-                      className="group flex flex-col lg:flex-row lg:items-center gap-5 p-6 rounded-lg  transition-all bg-neutral-100 h-full "
-                      style={{ backgroundColor: bgColor }}
+                      className="group flex flex-col lg:flex-row lg:items-center gap-5 p-6 rounded-lg transition-all bg-stone-700/10 h-full"
                     >
                       <div className="flex-1 order-2 lg:order-1">
-                        <div className="border-l-4 border-gray-800 pl-3 mb-3">
+                        <div className="border-l-4 border-secondary pl-3 mb-3">
                           <Typography
                             variant="h4"
                             fontFamily="sans"
-                            className="group-hover:opacity-70 transition-opacity text-gray-900"
+                            className="group-hover:opacity-70 transition-opacity text-text-dark"
                             fontWeight="medium"
                           >
                             {project.project_name || "Unnamed Project"}
@@ -179,18 +183,18 @@ export default function PortfolioPage() {
                           <Typography
                             variant="body2"
                             fontFamily="sans"
-                            className="text-gray-600 group-hover:opacity-70 transition-opacity mt-1"
+                            className="text-secondary group-hover:opacity-70 transition-opacity mt-1"
                           >
                             {project.project_location || ""}
                           </Typography>
                         </div>
 
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center mt-4  py-1 px-2 rounded-full w-fit">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center mt-4 py-1 px-2 rounded-full w-fit">
                           <Typography
                             variant="body2"
                             fontFamily="sans"
                             fontWeight="medium"
-                            className="text-gray-900 mr-2"
+                            className="text-text-dark mr-2"
                           >
                             View Details
                           </Typography>
@@ -214,7 +218,7 @@ export default function PortfolioPage() {
                       </div>
 
                       <div
-                        className="rounded-lg overflow-hidden w-full h-[200px] lg:h-[150px] lg:w-[150px] order-1 lg:order-2 flex-shrink-0 transition-transform duration-700 ease-in-out group-hover:scale-105 border border-gray-200 shadow-sm"
+                        className="rounded-lg overflow-hidden w-full h-[200px] lg:h-[150px] lg:w-[150px] order-1 lg:order-2 flex-shrink-0 transition-transform duration-700 ease-in-out group-hover:scale-105 hover:shadow-sm"
                         style={{
                           backgroundImage: `url(${project.project_image})`,
                           backgroundSize: "cover",
@@ -226,8 +230,10 @@ export default function PortfolioPage() {
                 );
               })
             ) : (
-              <div className="col-span-2 text-center py-10 bg-gray-50 rounded-lg border border-gray-200">
-                <p>No projects found in this category.</p>
+              <div className="col-span-2 text-center py-10 bg-primary rounded-lg border border-secondary/20">
+                <p className="text-text-dark">
+                  No projects found in this category.
+                </p>
               </div>
             )}
           </motion.div>

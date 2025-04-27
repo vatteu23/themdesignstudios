@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
   }, [pathname]);
 
   return (
-    <nav className="backdrop-blur-2xl bg-white/70 text-black py-3 sticky top-0 z-50">
+    <nav className="backdrop-blur-2xl bg-primary/20 text-text-dark py-3 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
             <Typography
               variant="h4"
               fontWeight="medium"
-              className="!text-black"
+              className="!text-text-dark"
             >
               Them design
               <br />
@@ -43,7 +43,7 @@ const NavBar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-black focus:outline-none"
+              className="text-text-dark focus:outline-none"
               aria-label="Toggle menu"
             >
               <svg
@@ -68,46 +68,42 @@ const NavBar: React.FC = () => {
           <div className="hidden md:flex space-x-8">
             <Link
               href="/"
-              className={`text-base font-medium hover:text-gray-600 ${
-                pathname === "/" ? "text-neutral-900" : "text-neutral-500"
+              className={`text-base font-medium hover:text-secondary ${
+                pathname === "/" ? "text-text-dark" : "text-secondary"
               }`}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className={`text-base font-medium hover:text-gray-600 ${
-                pathname === "/about" ? "text-neutral-900" : "text-neutral-500"
+              className={`text-base font-medium hover:text-secondary ${
+                pathname === "/about" ? "text-text-dark" : "text-secondary"
               }`}
             >
               About
             </Link>
             <Link
               href="/services"
-              className={`text-base font-medium hover:text-gray-600 ${
+              className={`text-base font-medium hover:text-secondary ${
                 pathname?.startsWith("/services")
-                  ? "text-neutral-900"
-                  : "text-neutral-500"
+                  ? "text-text-dark"
+                  : "text-secondary"
               }`}
             >
               Services
             </Link>
             <Link
               href="/portfolio"
-              className={`text-base font-medium hover:text-gray-600 ${
-                pathname === "/portfolio"
-                  ? "text-neutral-900"
-                  : "text-neutral-500"
+              className={`text-base font-medium hover:text-secondary ${
+                pathname === "/portfolio" ? "text-text-dark" : "text-secondary"
               }`}
             >
               Portfolio
             </Link>
             <Link
               href="/contact"
-              className={`text-base font-medium hover:text-gray-600 ${
-                pathname === "/contact"
-                  ? "text-neutral-900"
-                  : "text-neutral-500"
+              className={`text-base font-medium hover:text-secondary ${
+                pathname === "/contact" ? "text-text-dark" : "text-secondary"
               }`}
             >
               Contact
@@ -122,7 +118,7 @@ const NavBar: React.FC = () => {
               <Link
                 href="/"
                 className={`text-base font-medium py-2 ${
-                  pathname === "/" ? "text-neutral-900" : "text-neutral-500"
+                  pathname === "/" ? "text-text-dark" : "text-secondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -131,9 +127,7 @@ const NavBar: React.FC = () => {
               <Link
                 href="/about"
                 className={`text-base font-medium py-2 ${
-                  pathname === "/about"
-                    ? "text-neutral-900"
-                    : "text-neutral-500"
+                  pathname === "/about" ? "text-text-dark" : "text-secondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -143,8 +137,8 @@ const NavBar: React.FC = () => {
                 href="/services"
                 className={`text-base font-medium py-2 ${
                   pathname?.startsWith("/services")
-                    ? "text-neutral-900"
-                    : "text-neutral-500"
+                    ? "text-text-dark"
+                    : "text-secondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -154,8 +148,8 @@ const NavBar: React.FC = () => {
                 href="/portfolio"
                 className={`text-base font-medium py-2 ${
                   pathname === "/portfolio"
-                    ? "text-neutral-900"
-                    : "text-neutral-500"
+                    ? "text-text-dark"
+                    : "text-secondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -164,9 +158,7 @@ const NavBar: React.FC = () => {
               <Link
                 href="/contact"
                 className={`text-base font-medium py-2 ${
-                  pathname === "/contact"
-                    ? "text-neutral-900"
-                    : "text-neutral-500"
+                  pathname === "/contact" ? "text-text-dark" : "text-secondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
