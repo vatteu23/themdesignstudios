@@ -1,33 +1,25 @@
 import "../styles/globals.css";
-import { Metadata } from "next";
 import { Providers } from "./providers";
 import ClientLayout from "@/components/ClientLayout";
+import OrganizationJsonLd from "@/components/seo/OrganizationJsonLd";
+import { generateRootMetadata } from "@/lib/seo/metadata";
+import { getSiteSettingsServer } from "@/lib/seo/firebase-server";
 
-import Footer from "@/components/footer";
-import NavBar from "@/components/navbar";
-import ScrollToTop from "@/components/ScrollToTop";
+export async function generateMetadata() {
+  return generateRootMetadata();
+}
 
-export const metadata: Metadata = {
-  title: "Them design studios",
-  description:
-    "Architecture & Spatial Design Services in India. Hyderabad | Bangalore | Bombay",
-  openGraph: {
-    images: "/them-studios.png",
-  },
-  twitter: {
-    images: "/them-studios.png",
-    card: "summary_large_image",
-  },
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const settings = await getSiteSettingsServer();
+
   return (
     <html lang="en">
       <body>
+        <OrganizationJsonLd settings={settings} />
         <Providers>
           <ClientLayout>{children}</ClientLayout>
         </Providers>

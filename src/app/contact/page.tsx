@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EmailTest from "./email-test";
+import { useSiteSettings } from "@/lib/content/hooks";
 
 interface FormData {
   name: string;
@@ -59,6 +60,7 @@ const buttonVariants = {
 
 export default function Contact() {
   const router = useRouter();
+  const { settings } = useSiteSettings();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -228,7 +230,7 @@ export default function Contact() {
                   gutterBottom
                   className="text-text-dark"
                 >
-                  <strong>Tel:</strong> +917702277247
+                  <strong>Tel:</strong> {settings.contact_phone}
                 </Typography>
               </motion.div>
 
@@ -239,7 +241,7 @@ export default function Contact() {
                   gutterBottom
                   className="text-text-dark"
                 >
-                  <strong>Email:</strong> maneesh@themdesignstudios.com
+                  <strong>Email:</strong> {settings.contact_email}
                 </Typography>
               </motion.div>
 
@@ -250,9 +252,7 @@ export default function Contact() {
                   gutterBottom
                   className="text-text-dark"
                 >
-                  <strong>Address:</strong> 11-13-981, Road No. 2, Green Hills
-                  Colony, Haripuri Colony, Vasavi Colony, L. B. Nagar,
-                  Hyderabad, Telangana 500035, India
+                  <strong>Address:</strong> {settings.contact_address}
                 </Typography>
               </motion.div>
             </div>
@@ -272,7 +272,7 @@ export default function Contact() {
 
               <div className="h-[400px] rounded-lg overflow-hidden border border-secondary/30">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.0778366494734!2d78.54965387466983!3d17.356500583736324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb980e9d0325c1%3A0x9ffc55fb55db5ddc!2s11-13-981%2C%20Road%20No.%202%2C%20Green%20Hills%20Colony%2C%20Haripuri%20Colony%2C%20Vasavi%20Colony%2C%20L.%20B.%20Nagar%2C%20Hyderabad%2C%20Telangana%20500035%2C%20India!5e0!3m2!1sen!2sus!4v1718792351244!5m2!1sen!2sus"
+                  src={settings.map_embed_url}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

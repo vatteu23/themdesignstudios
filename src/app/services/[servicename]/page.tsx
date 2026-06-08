@@ -79,17 +79,10 @@ export default function ServiceDetail() {
       const projectsData = snapshot.val();
       if (projectsData) {
         const projects = projectIds
-          .filter((id) => projectsData[id]) // Filter out any invalid IDs
+          .filter((id) => projectsData[id])
           .map((id) => ({
             id,
             ...projectsData[id],
-            // Map old project fields to new format if needed
-            title: projectsData[id].project_name || projectsData[id].title,
-            description:
-              projectsData[id].project_description ||
-              projectsData[id].description,
-            imageUrl:
-              projectsData[id].project_image || projectsData[id].imageUrl,
           }));
         setRelatedProjects(projects);
       }
@@ -249,14 +242,14 @@ export default function ServiceDetail() {
                       className="mb-3 group-hover:opacity-70 transition-opacity"
                       fontWeight="medium"
                     >
-                      {project.title || "Project"}
+                      {project.project_name || "Project"}
                     </Typography>
                     <Typography
                       variant="body1"
                       fontFamily="sans"
                       className="text-gray-600 mb-4 group-hover:opacity-70 transition-opacity"
                     >
-                      {project.description || "No description available"}
+                      {project.project_description || "No description available"}
                     </Typography>
 
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center mt-4">
@@ -287,11 +280,11 @@ export default function ServiceDetail() {
                     </div>
                   </div>
 
-                  {project.imageUrl && (
+                  {project.project_image && (
                     <div
                       className="min-w-[400px] rounded-lg max-h-[400px] aspect-square transition-transform duration-700 ease-in-out group-hover:scale-105"
                       style={{
-                        backgroundImage: `url(${project.imageUrl})`,
+                        backgroundImage: `url(${project.project_image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                       }}

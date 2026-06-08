@@ -1,0 +1,54 @@
+{
+  "rules": {
+    "services": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "projects": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "projectimages": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "pagecontent": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "sitesettings": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "home": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "team": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "navigation": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "metadata": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "emails": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "auditlog": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}

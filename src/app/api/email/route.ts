@@ -3,8 +3,11 @@ import { Resend } from "resend";
 import { ref, push, set } from "firebase/database";
 import { db } from "@/firebase";
 
-// Initialize Resend with your API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) throw new Error("RESEND_API_KEY is not configured");
+  return new Resend(key);
+}
 
 // The verified email domain
 const VERIFIED_EMAIL = "maneesh@themdesignstudios.com";
@@ -52,7 +55,7 @@ export async function POST(req: NextRequest) {
     try {
       // First send the admin notification
       const { data: adminEmailData, error: adminEmailError } =
-        await resend.emails.send({
+        await getResend().emails.send({
           from: `Them design studios <${VERIFIED_EMAIL}>`,
           to: "u1.bythem@gmail.com", // Admin email
           // Only include cc if email is provided and not the same as to address
@@ -122,7 +125,7 @@ Address: 11-13-981, Road No. 2, Green Hills Colony, L. B. Nagar, Hyderabad, Tela
     // Send confirmation email to user (in a separate try/catch)
     try {
       const { data: userEmailData, error: userEmailError } =
-        await resend.emails.send({
+        await getResend().emails.send({
           from: `Them design studios <${VERIFIED_EMAIL}>`,
           to: email,
           bcc: ["u1.bythem@gmail.com"], // BCC the admin as a backup

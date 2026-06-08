@@ -27,9 +27,6 @@ export default function ProjectDetail() {
   useEffect(() => {
     if (!projectname) return;
 
-    // Set document title based on project name
-    document.title = projectname;
-
     // Get project details by page name
     getProjectDetailsByPageName(projectname);
   }, [projectname]);
@@ -87,7 +84,6 @@ export default function ProjectDetail() {
         });
 
         if (projectData) {
-          document.title = projectData["project_name"] || pageName;
           setProjectDetails(projectData);
 
           // Get images for this project

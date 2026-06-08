@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) throw new Error("RESEND_API_KEY is not configured");
+  return new Resend(key);
+}
 
 // The verified email domain
 const VERIFIED_EMAIL = "maneesh@themdesignstudios.com";
@@ -12,7 +15,7 @@ export async function POST(req: NextRequest) {
     console.log("Starting test email send");
 
     // Basic HTML email without React components for testing
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await getResend().emails.send({
       from: `Them design studios <${VERIFIED_EMAIL}>`,
       to: "u1.bythem@gmail.com",
       subject: "Test Email from Contact Form",

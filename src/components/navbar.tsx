@@ -5,21 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import Typography from "./Typography";
 import { usePathname } from "next/navigation";
+import { useNavigation, useSiteSettings } from "@/lib/content/hooks";
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathname = usePathname();
+  const { items: navItems } = useNavigation();
+  const { settings } = useSiteSettings();
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  const linkClass = (href: string) => {
+    const isActive =
+      href === "/"
+        ? pathname === "/"
+        : pathname === href || pathname?.startsWith(`${href}/`);
+    return `text-base font-medium hover:text-secondary ${
+      isActive ? "text-text-dark" : "text-secondary"
+    }`;
+  };
 
   return (
     <nav className="backdrop-blur-2xl bg-primary/20 text-text-dark py-3 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo-simp.svg"
@@ -33,13 +44,12 @@ const NavBar: React.FC = () => {
               fontWeight="medium"
               className="!text-text-dark"
             >
-              Them design
+              {settings.site_name.split(" ").slice(0, 2).join(" ")}
               <br />
-              studios
+              {settings.site_name.split(" ").slice(2).join(" ") || "studios"}
             </Typography>
           </Link>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -64,106 +74,28 @@ const NavBar: React.FC = () => {
             </button>
           </div>
 
-          {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className={`text-base font-medium hover:text-secondary ${
-                pathname === "/" ? "text-text-dark" : "text-secondary"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className={`text-base font-medium hover:text-secondary ${
-                pathname === "/about" ? "text-text-dark" : "text-secondary"
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className={`text-base font-medium hover:text-secondary ${
-                pathname?.startsWith("/services")
-                  ? "text-text-dark"
-                  : "text-secondary"
-              }`}
-            >
-              Services
-            </Link>
-            <Link
-              href="/portfolio"
-              className={`text-base font-medium hover:text-secondary ${
-                pathname === "/portfolio" ? "text-text-dark" : "text-secondary"
-              }`}
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/contact"
-              className={`text-base font-medium hover:text-secondary ${
-                pathname === "/contact" ? "text-text-dark" : "text-secondary"
-              }`}
-            >
-              Contact
-            </Link>
+            {navItems.map((item) => (
+              <Link key={item.id} href={item.href} className={linkClass(item.href)}>
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-3">
-              <Link
-                href="/"
-                className={`text-base font-medium py-2 ${
-                  pathname === "/" ? "text-text-dark" : "text-secondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className={`text-base font-medium py-2 ${
-                  pathname === "/about" ? "text-text-dark" : "text-secondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                className={`text-base font-medium py-2 ${
-                  pathname?.startsWith("/services")
-                    ? "text-text-dark"
-                    : "text-secondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="/portfolio"
-                className={`text-base font-medium py-2 ${
-                  pathname === "/portfolio"
-                    ? "text-text-dark"
-                    : "text-secondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="/contact"
-                className={`text-base font-medium py-2 ${
-                  pathname === "/contact" ? "text-text-dark" : "text-secondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className={`text-base font-medium py-2 ${linkClass(item.href)}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         )}
