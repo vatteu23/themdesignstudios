@@ -1,23 +1,38 @@
 import { SiteSettings } from "@/types/cms";
 import { DEFAULT_SITE_SETTINGS } from "@/lib/cms/defaults";
 
+const PRODUCTION_FALLBACK = "https://themdesignstudios.com";
+
+function normalizeUrl(url: string): string {
+  const trimmed = url.replace(/\/$/, "");
+  return trimmed.startsWith("http") ? trimmed : `https://${trimmed}`;
+}
+
 export function getSiteUrl(settings?: Partial<SiteSettings>): string {
   const fromSettings = settings?.site_url?.trim();
   if (fromSettings) {
-    return fromSettings.replace(/\/$/, "");
+    return normalizeUrl(fromSettings);
   }
 
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (fromEnv) {
-    return fromEnv.replace(/\/$/, "");
+    return normalizeUrl(fromEnv);
   }
 
-  const vercelUrl = process.env.VERCEL_URL?.trim();
-  if (vercelUrl) {
-    return `https://${vercelUrl.replace(/\/$/, "")}`;
+  // Never use preview deployment URLs (e.g. *-team.vercel.app) for sitemaps/canonicals.
+  const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (productionUrl) {
+    return normalizeUrl(productionUrl);
   }
 
-  return "https://themdesignstudios.com";
+  if (process.env.VERCEL_ENV === "production") {
+    const vercelUrl = process.env.VERCEL_URL?.trim();
+    if (vercelUrl) {
+      return normalizeUrl(vercelUrl);
+    }
+  }
+
+  return PRODUCTION_FALLBACK;
 }
 
 export function absoluteUrl(path: string, settings?: Partial<SiteSettings>): string {
